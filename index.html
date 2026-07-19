@@ -29,7 +29,10 @@
     nav a { margin-left: 16px; color: #333; }
     nav a:hover { color: #4183C4; }
     nav svg { width: 24px; height: 24px; vertical-align: middle; }
-    .profile-img { float: right; padding-left: 30px; padding-bottom: 10px; width: 250px; height: auto; margin-top: -50px; }
+    .about-row { display: flex; gap: 30px; align-items: flex-start; }
+    .about-main { flex: 1; min-width: 0; }
+    .about-side { flex: 0 0 220px; padding-top: 28px; }
+    .profile-img { width: 220px; height: auto; display: block; }
     .pub-list { list-style: disc; }
     .pub-list li { margin-bottom: 18px; }
     .eqc { font-size: 14px; color: #666; }
@@ -43,7 +46,9 @@
       .masthead { display: block; text-align: center; }
       nav { margin-top: 10px; }
       nav a:first-child { margin-left: 0; }
-      .profile-img { float: none; display: block; margin: 0 auto 15px; padding-left: 0; }
+      .about-row { display: block; }
+      .about-side { padding-top: 0; }
+      .profile-img { margin: 0 auto 15px; }
     }
   </style>
 </head>
@@ -76,12 +81,9 @@
 
   <div id="main" role="main" class="container">
     <article class="page">
-      <h1>About</h1>
-      <div class="entry">
-        <!-- TODO: drop your photo at images/self.jpg (square, ≥440px). Placeholder shows until then. -->
-        <p><img class="profile-img" src="images/self.jpg" alt="Sibo Zhu"
-               onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22220%22%20height=%22220%22%3E%3Crect%20width=%22100%25%22%20height=%22100%25%22%20fill=%22%23eeeeee%22/%3E%3Ctext%20x=%2250%25%22%20y=%2250%25%22%20font-family=%22Helvetica%22%20font-size=%2213%22%20fill=%22%23999999%22%20text-anchor=%22middle%22%3Ephoto:%20images/self.jpg%3C/text%3E%3C/svg%3E'" /></p>
-
+      <div class="about-row">
+      <div class="entry about-main">
+        <h1>About</h1>
         <p>I am a graduate student at UC San Diego, supervised by
           <a href="https://lancelot39.github.io/">Dr. Kun Zhou</a> and
           <a href="https://biweihuang.com/">Prof. Biwei Huang</a>.</p>
@@ -97,7 +99,13 @@
           <li>2026: <a href="https://arxiv.org/abs/2603.10291">HyMEM</a> is accepted to <strong>Findings of ACL 2026</strong>!</li>
           <li>May 2026: <a href="https://arxiv.org/abs/2605.02168">Planner Matters!</a> preprint is on arXiv — planner-centric compute allocation and RL for multi-agent automation.</li>
         </ul>
+      </div>
+      <div class="about-side">
+        <img class="profile-img" src="images/self.jpg" alt="Sibo Zhu" />
+      </div>
+      </div>
 
+      <div class="entry">
         <h1 id="selected-work">Selected work</h1>
         <ul class="pub-list">
           <li>
